@@ -1,0 +1,2 @@
+# Othello
+React Othello project
