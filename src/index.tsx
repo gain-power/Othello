@@ -1,12 +1,58 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const Square= () => {
+  return (
+    <button className="square">
+    </button>
+  );
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const Board = () => { 
+  
+  const renderSquare = (i: number) => <Square />;
+
+  const createRow =(firstNum: number)=> {
+    const squares = () => {
+      const square: JSX.Element[] = [];
+      for (const max = firstNum + 8; firstNum < max; firstNum++){
+        square.push(renderSquare(firstNum));
+      }
+
+      return square;
+    }
+
+    return (
+      <div className="board-row">
+        {squares()}
+      </div>
+    );
+  }
+
+  const arr = [0, 8, 16, 24, 32, 40, 48, 56, 64];
+
+  return (
+    <div>
+      {arr.map(v => createRow(v))}
+    </div>
+  );
+}
+
+const Game = () => { 
+  return (
+    <div className="game">
+      <div className="game-board">
+        <Board />
+      </div>
+    </div>
+  );
+}
+
+// ========================================
+
+ReactDOM.render(
+  <Game />,
+  document.getElementById('root')
+);
+
