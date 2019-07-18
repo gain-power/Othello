@@ -2,48 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-const Square= () => {
-  return (
-    <button className="square">
-    </button>
-  );
-}
+const Square= () => <div className='stone' />
 
-const Board = () => { 
+const Board = () => {
+  <div className='board'>
   
-  const renderSquare = (i: number) => <Square />;
-
-  const createRow =(firstNum: number)=> {
-    const squares = () => {
-      const square: JSX.Element[] = [];
-      for (const max = firstNum + 8; firstNum < max; firstNum++){
-        square.push(renderSquare(firstNum));
-      }
-
-      return square;
-    }
-
-    return (
-      <div className="board-row">
-        {squares()}
-      </div>
-    );
-  }
-
-  const arr = [0, 8, 16, 24, 32, 40, 48, 56, 64];
-
-  return (
-    <div>
-      {arr.map(v => createRow(v))}
-    </div>
-  );
+  </div>
 }
 
-const Game = () => { 
+const Othello = () => {
+
   return (
-    <div className="game">
-      <div className="game-board">
-        <Board />
+    <div className='main'>
+      <div className='board'>
+        <Board></Board>
       </div>
     </div>
   );
@@ -52,7 +24,7 @@ const Game = () => {
 // ========================================
 
 ReactDOM.render(
-  <Game />,
+  <Othello />,
   document.getElementById('root')
 );
 
