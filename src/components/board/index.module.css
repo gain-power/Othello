@@ -1,0 +1,16 @@
+.board {
+  box-sizing: border-box;
+  align-items: center;
+  position: relative;
+  background-color: #168a16;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: 640px;
+  height: 83px;
+  margin-top: -3px;
+  position: relative;
+  z-index: 2;
+}

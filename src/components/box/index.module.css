@@ -1,0 +1,35 @@
+.box {
+  position: absolute;
+  width: 323px;
+  height: 323px;
+  top: 160px;
+  left: 160px;
+}
+
+.circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #000;
+  position: absolute;
+}
+
+.top_left {
+  left: -7px;
+  top: -7px;
+}
+
+.top_right {
+  right: -7px;
+  top: -7px;
+}
+
+.btm_left {
+  left: -7px;
+  bottom: -7px;
+}
+
+.btm_right {
+  right: -7px;
+  bottom: -7px;
+}

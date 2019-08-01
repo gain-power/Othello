@@ -1,30 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import s from './index.module.css';
+import Board from './components/board/Board';
 
-const Square= () => <div className='stone' />
-
-const Board = () => {
-  <div className='board'>
-  
-  </div>
-}
-
-const Othello = () => {
-
-  return (
-    <div className='main'>
-      <div className='board'>
-        <Board></Board>
-      </div>
+const Othello: React.FC = () => (
+  <div className={s.main}>
+    <div className="control" />
+    <div className="board">
+      <Board />
     </div>
-  );
-}
+  </div>
+);
 
 // ========================================
 
 ReactDOM.render(
   <Othello />,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
-
